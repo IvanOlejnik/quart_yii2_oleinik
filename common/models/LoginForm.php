@@ -48,7 +48,7 @@ class LoginForm extends Model
             }
             
             $request = Yii::$app->request;
-            if($request->baseUrl == '/admin' && $user->role != 'admin'){
+            if($request->baseUrl == '/backend/web' && $user->role != 'admin'){
                 $this->addError($attribute, 'You not admin!');
             }
             if($user->role == 'ban'){
