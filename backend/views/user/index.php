@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'role',
             [
                 'attribute'=>'avatar_image',
-                'value'=> $model->avatar_image,
+                //'value'=> $model->avatar_image,
                 'format' => ['image',['class'=>'icon-size']],
             ],
 

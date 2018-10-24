@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             [
                 'attribute'=>'icon',
-                'value'=> $model->icon,
+                //'value'=> $model->icon,
                 'format' => ['image',['class'=>'icon-size']],
             ],
 

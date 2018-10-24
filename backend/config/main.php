@@ -16,7 +16,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
-            //'baseUrl' => '/admin',
+            'baseUrl' => '/admin',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -47,6 +47,7 @@ return [
                 '/users' => 'user/index',
                 //'/payments' => 'payments/index',
                 '/resources' => 'resources/index',
+                 '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
             ],
         ],
         //*/
