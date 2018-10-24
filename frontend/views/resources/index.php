@@ -39,16 +39,18 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr> <?php ActiveForm::end(); ?>
         </thead>
         <tbody>
-            <?foreach($resourcesData as $resourcData){?>
-            <tr data-key="3">
-                <?if(isset($resourcData['resources'])){?>
-                    <td><?=$resourcData['resources']['id'];?></td>
-                    <td><?=$resourcData['resources']['name'];?></td>
-                    <td><?=$resourcData['count'];?></td>
-                    <td><img class="icon-size" src="<?=$resourcData['resources']['icon'];?>"></td>
-                    <td><a href="/resources/update?id=<?=$resourcData['resources']['id']?>"><span class="glyphicon glyphicon-pencil">Редактировать</span></a></td>
+            <?if(isset($resourcesData) && !empty($resourcesData)){ 
+                foreach($resourcesData as $resourcData){?>
+                <tr data-key="3">
+                    <?if(isset($resourcData['resources'])){?>
+                        <td><?=$resourcData['resources']['id'];?></td>
+                        <td><?=$resourcData['resources']['name'];?></td>
+                        <td><?=$resourcData['count'];?></td>
+                        <td><img class="icon-size" src="<?=$resourcData['resources']['icon'];?>"></td>
+                        <td><a href="/resources/update?id=<?=$resourcData['resources']['id']?>"><span class="glyphicon glyphicon-pencil">Редактировать</span></a></td>
+                    <?}?>
                 <?}?>
-            </tr>
+                </tr>
             <?}?>
         </tbody>
     </table>
