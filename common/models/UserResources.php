@@ -7,6 +7,8 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Resources;
 use frontend\models\SearchResoursForm;
+use yii2tech\ar\position\PositionBehavior;
+
 
 /**
  * This is the model class for table "user_resources".
@@ -23,6 +25,15 @@ class UserResources extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+     public function behaviors()
+    {
+        return [
+            'positionBehavior' => [
+                'class' => PositionBehavior::className(),
+                'positionAttribute' => 'position',
+            ],
+        ];
+    } 
      
     public static function tableName()
     {

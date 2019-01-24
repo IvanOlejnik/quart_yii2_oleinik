@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </td>    
         </tr> <?php ActiveForm::end(); ?>
         </thead>
-        <tbody>
+       <tbody>
             <?if(isset($resourcesData) && !empty($resourcesData)){ 
                 foreach($resourcesData as $resourcData){?>
                 <tr data-key="3">
@@ -52,6 +52,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?}?>
                 </tr>
             <?}?>
-        </tbody>
+        </tbody> 
     </table>
+    <pre>
+    <?php var_dump($resourcesData);?>
+    </pre>
 </div>

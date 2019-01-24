@@ -59,10 +59,29 @@ class ResourcesController extends Controller
                 ->all();  
         }else{
             $resourcesData = User::findIdentity($userId)
-                ->getResourcesUser()
+                ->getResourcesUser()->orderBy(['count' => SORT_ASC])
                 ->with('resources')
+                ->with('user')
                 ->asArray()
                 ->all();  
+                
+                /*
+                
+                         $resourcesData = User::findIdentity($userId)
+                ->getResourcesUser()
+                ->with('resources')
+                ->with('user')
+                ->asArray()
+                ->all();  
+
+          //  $resourcesData = Resources::find()//->one()
+              //  ->getUsers()
+               // ->with('resources')
+               // ->with('user')
+             //   ->asArray()
+              //  ->all();                  
+               // getUserResources
+                */
         }
             
         return $this->render('index', [
